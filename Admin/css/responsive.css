@@ -1,0 +1,101 @@
+/*Mobile--Version*/
+@media screen and (min-width: 320px) and (max-width: 991px) {
+.content_holesecion .myview-quality-half, .myview-quality-qaul, .myview-quality-full {width: 100%!important;}	
+.content_holesecion .myview-quality-half label, .myview-quality-qaul label, .myview-quality-full label {width: 100%!important;}
+.content_holesecion .myview-quality-half input, .myview-quality-qaul input, .myview-quality-full input {width: 100%!important;}	
+.myview-quality-half, .myview-quality-qaul, .myview-quality-full {width: 100%;}	
+.myview-quality-half label, .myview-quality-qaul label, .myview-quality-full label {width: 50%;}
+.myview-quality-half, .myview-quality-qaul, .myview-quality-qaul, .myview-quality-half {
+    width: 100% !important;
+}
+.myview-quality-half label {
+    width: 100% !important;
+}	
+.myview-quality-half p, .myview-quality-qaul p, .myview-quality-full p {width: 50%;}
+.content_holesecion .myview-quality-half {
+    width: 100%!important;
+}
+.content_holesecion .myview-quality-half input {
+    /* width: 378px; */
+    width: 100%!important;
+}
+.content_holesecion .myview-quality-qaul textarea#comment_qual {
+    width: 100%!important;
+}
+.content_holesecion .myview-quality-half select {
+    width: 100%!important;
+}	
+.myview-quality-half.mydate-qua input#datepicker7 {
+    max-width: 100%!important;
+}
+
+/*END*/	
+}
+
+@media only screen and (min-width: 320px) and (max-width: 575px) {
+.yeru-map-markers {text-align: left !important;padding: 24px 0 0 !important;}
+
+.yeru-map-markers div {height: 55px;}
+
+}
+ @media screen and (min-width: 320px) and (max-width: 767px) {
+.wrapper .content-wrapper, .main-footer {
+    margin-left: 0 !important;
+}	 
+.mybtn-para {
+    flex-direction: column !important;
+}
+.mybtn-para a {
+    margin: 0 0 10px 0 !important;
+    text-align: center;
+	width: 100% !important;
+}
+.myprofile-typo {
+    width: 100% !important;}
+	.adminlogers {
+    height: 100%;
+}
+}
+@media (min-width: 768px){
+.sidebar-mini.sidebar-collapse .content-wrapper, .sidebar-mini.sidebar-collapse .right-side, .sidebar-mini.sidebar-collapse .main-footer {
+    margin-left: 70px !important;
+
+}
+}
+/*Tab--Version*/
+@media screen and (min-width: 768px) and (max-width: 991px) {
+#input_container {   width: 100% !important;}
+#input_img {bottom: 13px !important;}
+.myprofile-typo {width: 100% !important;}
+	
+	
+/*END*/	
+} 
+/*Lap--Version*/
+@media screen and (min-width: 992px) and (max-width: 1200px) {	
+#input_container {   width: 100% !important;}
+.myprofile-typo {width: 100% !important;}
+/*END*/	
+} 
+/*L-Lap--Version*/
+@media screen and (min-width: 1029px) and (max-width: 1300px) {
+	
+	
+/*END*/	
+} 
+
+
+@media screen and (min-width: 992px) and (max-width: 1028px) {
+	
+	
+/*END*/	
+} 
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+	.content_holesecion .myview-quality-half input,.content_holesecion .myview-quality-half select {
+    width: 280px!important;
+}
+ .myview-quality-half.mydate-qua input#datepicker7{    max-width: 280px!important;}
+	
+/*END*/	
+} 

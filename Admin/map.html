@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Galveston Bay Foundation</title>
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="shortcut icon" href="images/favicon.ico">
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/ionicons.min.css">
+  <link rel="stylesheet" href="css/AdminLTE.min.css">
+  <link rel="stylesheet" href="CSS/skin-blue.min.css">
+      <style>.container,.header-logo{padding:0;}</style>
+</head>
+
+<script>
+  $( function() {
+    $( ".navic" ).click( function() {
+      $(".user-panel h2").toggleClass( "usernamehid" );
+            $(".user-panel p").toggleClass( "userrolehid" );
+    });
+  });
+
+   $( function() {
+    $( ".navic" ).click( function() {
+      $(".sidebar-menu img").toggleClass( "leftali" );
+    });
+  });
+</script>
+
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <!-- Main Header -->
+  <header class="main-header">
+
+
+
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- Sidebar toggle button-->
+      <a href="#"  data-toggle="push-menu" role="button">
+       <img src="images/navicon.png" class="img-fluid navic">
+      </a>
+      <!-- Navbar Right Menu -->
+       <img src="images/adminlogo.png" class="img-fluid adminslog">
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel">
+        <div class="image text-center">
+          <img src="images/useradmin.png" class="img-circle img-fluid mx-auto d-block" alt="User Image">
+          <h2>Sarah Fernadez</h2>
+          <p>Admin</p>
+        </div>
+     
+      </div>
+
+
+      <!-- Sidebar Menu -->
+      <ul class="sidebar-menu" data-widget="tree">
+
+        <li><a href="manage_site.html"><img src="images/manage.png" class="img-fluid"/><span>Manage Sites</span></a></li>
+         <li class="treeview active">
+          <a href="#"><img src="images/report.png" class="img-fluid"/><span>Reports</span>
+            
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="map.html"><img src="images/report.png" class="img-fluid" style="visibility: hidden;"/> Map</a></li>
+            <li><a href="download_data.html"><img src="images/report.png" class="img-fluid" style="visibility: hidden;"/>Download Data</a></li>
+          </ul>
+        </li>
+
+                <li><a href="login.html"><img src="images/logout.png" class="img-fluid"/><span>Logout</span></a></li>
+       
+      </ul>
+      <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper adminprof">
+  		<!-- Header -->
+	<div class="header d-flex flex-column">
+	<div class="header-logo d-flex">
+		<div class="container">	
+		<div class="d-flex justify-content-between manage-dashboard">	
+	<h2>Map</h2>
+	
+	</div>
+	</div>
+	</div>
+	
+	
+	</div>
+    <div class="mymap-googlepix">
+        <div id="map_canvas" class="mapping"></div>
+    </div>
+	
+    <div class="yeru-map-markers">
+        <div class="mygreen-box">Active Sites</div>
+        <div class="">Inactive Sites</div>
+    </div>
+
+  </div>
+  </div>
+  <!-- /.content-wrapper -->
+
+ 
+<!-- jQuery 3 -->
+<script src="js/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+
+<!-- AdminLTE App -->
+<script src="js/adminlte.min.js"></script>
+
+
+    <!-- Modal -->
+    <div class="modal fade mymodal-googlepix" id="myModal-google" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="d-flex pop-up-map flex-column">
+                    <div class="pop-up-text">
+                        <h2>Clear Lake at Clear Lake Park Pier - Dissolved Oxygen</h2></div>
+                    <div class="innerpop-up-text">
+                        <p>These charts highlight water quality findings at this site over time. You can select different parameters and adjust the date range as desired. Charts with sections highlighted in yellow denote stressful values for that parameter.</p>
+                        <div class="d-flex flex-column chart-tab">
+                            <div class="tab-contents d-flex">
+                                <h5>View by</h5>
+                                <div class="main-tab">
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" onclick="unselectable()" data-toggle="tab" href="#home"><i class="fa fa-bar-chart" aria-hidden="true"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" onclick="unselectable()" data-toggle="tab" href="#menu1"><i class="fa fa-pie-chart" aria-hidden="true"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" onclick="selectable()" data-toggle="tab" href="#menu2"><i class="fa fa-table" aria-hidden="true"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="d-flex date_pages align-items-center" id="datePicker_section">
+                                    <form class="form-inline" action="">
+                                        <label for="from">From</label>
+                                        <input value="11/11/2014" id="datepicker" />
+                                        <label for="to">To</label>
+                                        <input value="11/11/2012" id="datepicker1" />
+
+                                        <button type="submit" class="btn btn-primary">Search</button>
+
+                                    </form>
+                                </div>
+
+                                <div class="d-flex date_pages align-items-center selections">
+                                    <select class="form-control ">
+                                        <option>Dissolved Oxygen</option>
+                                        <option>Select Report</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div id="home" class="container tab-pane active">
+                                    <br>
+                                    <div class="col-sm-12 text-center">
+                                        <!-- <label class="label label-success">Area Chart</label> -->
+                                        <div id="area-chart">
+                                            <div id="curve_chart"></div>
+                                            <div class="d-flex justify-content-center">
+                                                <button data-dismiss="modal" class="btn-blue">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="menu1" class="container tab-pane fade">
+                                    <br>
+                                    <div class="col-sm-12 text-center">
+                                        <div id="donutchart"></div>
+                                        <div class="d-flex justify-content-center">
+                                            <button data-dismiss="modal" class="btn-blue">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="menu2" class="container tab-pane fade">
+                                    <br>
+                                    <h1>SITE DATA</h1>
+                                    <div class="site_data d-flex flex-row">
+                                        <div class="col-12 rht_move col-sm-12 col-md-12 col-lg-6 col-xl-6 p-0">
+                                            <ul class="site_data_cont lft_sitedata">
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Event ID</label><span>29</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Site Description</label><span>Clear Lake 18 Waterford Oak Lane</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Sample time</label><span>07:00:00</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Air temp</label><span>24.5</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Avg. DO</label><span>5</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Transparency</label><span>0.4</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Days since precip</label><span>0</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label> Salinity</label><span>0</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Comments</label><span class="dec-width">Lorem Ipsum is simply dummy text of
+																					 the printing and typesetting industry. 
+																					Lorem Ipsum has been the industry's </span></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 p-0">
+                                            <ul class="site_data_cont rgt_sitedata">
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Monitor Number </label><span>ID 02869</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Sample date</label><span>11-09-2018</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Sample depth</label><span>0.1</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Water temp</label><span>24</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Sample pH</label><span>8.5</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Total depth</label><span>1.8</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Rain Accum</label><span>5</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Tide</label><span>9</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Site_Latitude</label><span>29.5459524</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Site_Latitude</label><span>-95.043871</span></li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                    <div style="padding: 24px 0;" class="d-flex justify-content-center">
+                                        <button data-dismiss="modal" class="btn-blue">Close</button>
+                                    </div>
+                                </div>
+                                <!--tab-end-->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+	 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", {
+            packages: ["corechart"]
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                ['20,5%', 25],
+
+                ['600,95%', 75]
+            ]);
+
+            var options = {
+                title: '',
+                pieHole: 0.4,
+                width: 600,
+                height: 250
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+            chart.draw(data, options);
+        }
+    </script>
+    <script type="text/javascript">
+        google.charts.load('current', {
+            'packages': ['corechart']
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Year', 'Sales', 'Expenses'],
+                ['2004', 1000, 400],
+                ['2005', 1170, 460],
+                ['2006', 660, 1120],
+                ['2007', 1030, 540]
+            ]);
+
+            var options = {
+                title: '',
+                curveType: 'function',
+                width: 600,
+                height: 250,
+                legend: {
+                    position: 'bottom'
+                }
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+            chart.draw(data, options);
+        }
+
+        //Tab-section
+        function selectable() {
+            $('.innerpop-up-text').addClass('mythird-item');
+        }
+
+        function unselectable() {
+            $('.innerpop-up-text').removeClass('mythird-item');
+        }
+    </script>
+
+    <!-- <script src="js/jquery.min.js"></script> -->
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+	 <script>
+        jQuery(function($) {
+            <!-- Asynchronously Load the map API  -->
+            var script = document.createElement('script');
+            script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDQk4z6HMd8NOVYE24diEYyi7XZknts-8U&sensor=false&callback=initialize";
+            document.body.appendChild(script);
+        });
+
+        function initialize() {
+            var map;
+            var bounds = new google.maps.LatLngBounds();
+            var mapOptions = {
+                mapTypeId: 'roadmap'
+            };
+            var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+            <!-- Display a map on the page -->
+            map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+            map.setTilt(45);
+
+            <!-- Multiple Markers -->
+            var markers = [
+                ['Bondi Beach', -33.890542, 151.274856, 4, iconBase + 'parking_lot_maps.png'],
+                ['Coogee Beach', -33.923036, 151.259052, 5, iconBase + 'library_maps.png'],
+                ['Cronulla Beach', -34.028249, 151.157507, 3, iconBase + 'parking_lot_maps.png'],
+                ['Manly Beach', -33.80010128657071, 151.28747820854187, 2, iconBase + 'info-i_maps.png'],
+                ['Maroubra Beach', -33.950198, 151.259302, 1, iconBase + 'parking_lot_maps.png']
+            ];
+
+            <!-- Info Window Content -->
+            var infoWindowContent = [
+                ['<div class="info_content">' +
+                    '<h3>Bondi Beach</h3>' +
+                    '</div>'
+                ],
+                ['<div class="info_content">' +
+                    '<h3>Coogee Beach</h3>' +
+                    '</div>'
+                ],
+                ['<div class="info_content">' +
+                    '<h3>Cronulla Beach</h3>' +
+                    '</div>'
+                ],
+                ['<div class="info_content">' +
+                    '<h3>Manly Beach</h3>' +
+                    '</div>'
+                ],
+                ['<div class="info_content">' +
+                    '<h3>Maroubra Beach</h3>' +
+                    '</div>'
+                ]
+            ];
+
+            <!-- Display multiple markers on a map -->
+            var infoWindow = new google.maps.InfoWindow(),
+                marker, i;
+
+            <!-- Loop through our array of markers & place each one on the map   -->
+            for (i = 0; i < markers.length; i++) {
+                var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+                bounds.extend(position);
+                marker = new google.maps.Marker({
+                    position: position,
+                    map: map,
+                    title: markers[i][0],
+                    icon: markers[i][4],
+                });
+
+                <!-- Allow each marker to have an info window     -->
+                google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                    return function() {
+                        //infoWindow.setContent(infoWindowContent[i][0]);
+                        //infoWindow.open(map, marker);
+                        $('#myModal-google').modal();
+                    }
+                })(marker, i));
+                <!-- Automatically center the map fitting all markers on the screen -->
+                map.fitBounds(bounds);
+            }
+            <!-- Override our map zoom level once our fitBounds function runs (Make sure it only runs once) -->
+            var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+                this.setZoom(10);
+                google.maps.event.removeListener(boundsListener);
+            });
+
+        }
+    </script>
+	 <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

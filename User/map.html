@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Galveston Bay Foundation</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap4 / Stylesheet -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+	<!--[if IE]>
+<style>
+    .date_pages.selections::after {content: none; }
+</style>
+<![endif]-->
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header d-flex flex-column">
+        <div class="header-logo d-flex">
+            <div class="container">
+                <div class="d-flex justify-content-between header_content">
+                   <a href="https://galvbay.org/"> <img src="images/logo.png" alt="LOGO" /></a>
+                    <ul class="d-flex flex-row align-items-center header_lists">
+                        <li class="wq-facebook"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li class="wq-twitter"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li class="wq-youtube"><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                        <li class="wq-instagram"><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="qaulity-nav" class="header-menu">
+            <div class="container">
+                <nav class="navbar navbar-expand-md">
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                        <span class="navbar-toggler-icon"><img src="images/menu.svg" alt="menu"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="Map_screen.html">map</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="about.html">about</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="download_data.html">download data</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+    <!-- END Header -->
+    <div class="mymap-googlepix">
+        <div id="map_canvas" class="mapping"></div>
+    </div>
+    <div class="yeru-map-markers">
+        <div class="mygreen-box">Active Sites</div>
+        <div class="">Inactive Sites</div>
+    </div>
+    <!--footer-->
+    <div class="footer d-flex flex-column">
+        <div class="container">
+            <div class="footer-brand d-flex flex-column">
+                <ul class="d-flex flex-row justify-content-center">
+                    <li class="seal-green d-flex align-items-center">
+                        <a href="#"><img src="images/seal_green.png" alt="footer" /></a>
+                    </li>
+                    <li class="charity d-flex align-items-center">
+                        <a href="#"><img src="images/BBB-accredited-charity.png" alt="footer" /></a>
+                    </li>
+                    <li class="four-star d-flex align-items-center">
+                        <a href="#"><img src="images/4star.gif" alt="footer" /></a>
+                    </li>
+                </ul>
+                <p>Copyright © 2018 · Galveston Bay Foundation · <a href="#">Privacy Policy</a></p>
+                <p>The Galveston Bay Foundation · 1100 Hercules Avenue · Suite 200 · Houston, TX 77058 · (281) 332-3381</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade mymodal-googlepix" id="myModal-google" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="d-flex pop-up-map flex-column">
+                    <div class="pop-up-text">
+                        <h2>Clear Lake at Clear Lake Park Pier - Dissolved Oxygen</h2></div>
+                    <div class="innerpop-up-text">
+                        <p>These charts highlight water quality findings at this site over time. You can select different parameters and adjust the date range as desired. Charts with sections highlighted in yellow denote stressful values for that parameter.</p>
+                        <div class="d-flex flex-column chart-tab">
+                            <div class="tab-contents d-flex">
+                                <h5>View by</h5>
+                                <div class="main-tab">
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" onclick="unselectable()" data-toggle="tab" href="#home"><i class="fa fa-bar-chart" aria-hidden="true"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" onclick="unselectable()" data-toggle="tab" href="#menu1"><i class="fa fa-pie-chart" aria-hidden="true"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" onclick="selectable()" data-toggle="tab" href="#menu2"><i class="fa fa-table" aria-hidden="true"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="d-flex date_pages align-items-center" id="datePicker_section">
+                                    <form class="form-inline" action="">
+                                        <label for="from">From</label>
+                                        <input value="11/11/2014" id="datepicker" />
+                                        <label for="to">To</label>
+                                        <input value="11/11/2012" id="datepicker1" />
+
+                                        <button type="submit" class="btn btn-primary">Search</button>
+
+                                    </form>
+                                </div>
+
+                                <div class="d-flex date_pages align-items-center selections">
+                                    <select class="form-control ">
+                                        <option>Dissolved Oxygen</option>
+                                        <option>Select Report</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div id="home" class="container tab-pane active">
+                                    <br>
+                                    <div class="col-sm-12 text-center">
+                                        <!-- <label class="label label-success">Area Chart</label> -->
+                                        <div id="area-chart">
+                                            <div id="curve_chart"></div>
+                                            <div class="d-flex justify-content-center">
+                                                <button data-dismiss="modal" class="btn-blue">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="menu1" class="container tab-pane fade">
+                                    <br>
+                                    <div class="col-sm-12 text-center">
+                                        <div id="donutchart"></div>
+                                        <div class="d-flex justify-content-center">
+                                            <button data-dismiss="modal" class="btn-blue">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="menu2" class="container tab-pane fade">
+                                    <br>
+                                    <h1>SITE DATA</h1>
+                                    <div class="site_data d-flex flex-row">
+                                        <div class="col-12 rht_move col-sm-12 col-md-12 col-lg-6 col-xl-6 p-0">
+                                            <ul class="site_data_cont lft_sitedata">
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Event ID</label><span>29</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Site Description</label><span>Clear Lake 18 Waterford Oak Lane</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Sample time</label><span>07:00:00</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Air temp</label><span>24.5</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Avg. DO</label><span>5</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Transparency</label><span>0.4</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Days since precip</label><span>0</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label> Salinity</label><span>0</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Comments</label><span class="dec-width">Lorem Ipsum is simply dummy text of
+																					 the printing and typesetting industry. 
+																					Lorem Ipsum has been the industry's </span></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 p-0">
+                                            <ul class="site_data_cont rgt_sitedata">
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Monitor Number </label><span>ID 02869</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Sample date</label><span>11-09-2018</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Sample depth</label><span>0.1</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Water temp</label><span>24</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Sample pH</label><span>8.5</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Total depth</label><span>1.8</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Rain Accum</label><span>5</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Tide</label><span>9</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Site_Latitude</label><span>29.5459524</span></li>
+                                                <li class="d-flex justify-content-between">
+                                                    <label>Site_Latitude</label><span>-95.043871</span></li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                    <div style="padding: 24px 0;" class="d-flex justify-content-center">
+                                        <button data-dismiss="modal" class="btn-blue">Close</button>
+                                    </div>
+                                </div>
+                                <!--tab-end-->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Bootstrap4 / javascript -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", {
+            packages: ["corechart"]
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                ['20,5%', 25],
+
+                ['600,95%', 75]
+            ]);
+
+            var options = {
+                title: '',
+                pieHole: 0.4,
+                width: 600,
+                height: 250
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+            chart.draw(data, options);
+        }
+    </script>
+    <script type="text/javascript">
+        google.charts.load('current', {
+            'packages': ['corechart']
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Year', 'Sales', 'Expenses'],
+                ['2004', 1000, 400],
+                ['2005', 1170, 460],
+                ['2006', 660, 1120],
+                ['2007', 1030, 540]
+            ]);
+
+            var options = {
+                title: '',
+                curveType: 'function',
+                width: 600,
+                height: 250,
+                legend: {
+                    position: 'bottom'
+                }
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+            chart.draw(data, options);
+        }
+
+        //Tab-section
+        function selectable() {
+            $('.innerpop-up-text').addClass('mythird-item');
+        }
+
+        function unselectable() {
+            $('.innerpop-up-text').removeClass('mythird-item');
+        }
+    </script>
+
+    <!-- <script src="js/jquery.min.js"></script> -->
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+    <!--Map -->
+    <script>
+        jQuery(function($) {
+            <!-- Asynchronously Load the map API  -->
+            var script = document.createElement('script');
+            script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDQk4z6HMd8NOVYE24diEYyi7XZknts-8U&sensor=false&callback=initialize";
+            document.body.appendChild(script);
+        });
+
+        function initialize() {
+            var map;
+            var bounds = new google.maps.LatLngBounds();
+            var mapOptions = {
+                mapTypeId: 'roadmap'
+            };
+            var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+            <!-- Display a map on the page -->
+            map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+            map.setTilt(45);
+
+            <!-- Multiple Markers -->
+            var markers = [
+                ['Bondi Beach', -33.890542, 151.274856, 4, iconBase + 'parking_lot_maps.png'],
+                ['Coogee Beach', -33.923036, 151.259052, 5, iconBase + 'library_maps.png'],
+                ['Cronulla Beach', -34.028249, 151.157507, 3, iconBase + 'parking_lot_maps.png'],
+                ['Manly Beach', -33.80010128657071, 151.28747820854187, 2, iconBase + 'info-i_maps.png'],
+                ['Maroubra Beach', -33.950198, 151.259302, 1, iconBase + 'parking_lot_maps.png']
+            ];
+
+            <!-- Info Window Content -->
+            var infoWindowContent = [
+                ['<div class="info_content">' +
+                    '<h3>Bondi Beach</h3>' +
+                    '</div>'
+                ],
+                ['<div class="info_content">' +
+                    '<h3>Coogee Beach</h3>' +
+                    '</div>'
+                ],
+                ['<div class="info_content">' +
+                    '<h3>Cronulla Beach</h3>' +
+                    '</div>'
+                ],
+                ['<div class="info_content">' +
+                    '<h3>Manly Beach</h3>' +
+                    '</div>'
+                ],
+                ['<div class="info_content">' +
+                    '<h3>Maroubra Beach</h3>' +
+                    '</div>'
+                ]
+            ];
+
+            <!-- Display multiple markers on a map -->
+            var infoWindow = new google.maps.InfoWindow(),
+                marker, i;
+
+            <!-- Loop through our array of markers & place each one on the map   -->
+            for (i = 0; i < markers.length; i++) {
+                var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+                bounds.extend(position);
+                marker = new google.maps.Marker({
+                    position: position,
+                    map: map,
+                    title: markers[i][0],
+                    icon: markers[i][4],
+                });
+
+                <!-- Allow each marker to have an info window     -->
+                google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                    return function() {
+                        //infoWindow.setContent(infoWindowContent[i][0]);
+                        //infoWindow.open(map, marker);
+                        $('#myModal-google').modal();
+                    }
+                })(marker, i));
+                <!-- Automatically center the map fitting all markers on the screen -->
+                map.fitBounds(bounds);
+            }
+            <!-- Override our map zoom level once our fitBounds function runs (Make sure it only runs once) -->
+            var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+                this.setZoom(10);
+                google.maps.event.removeListener(boundsListener);
+            });
+
+        }
+    </script>
+
+</body>
+
+</html>

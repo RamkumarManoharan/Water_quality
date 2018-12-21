@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Galveston Bay Foundation</title>
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="shortcut icon" href="images/favicon.ico">
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+	  <link rel="stylesheet" href="css/responsive.css">
+
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/ionicons.min.css">
+  <link rel="stylesheet" href="css/AdminLTE.min.css">
+  <link rel="stylesheet" href="CSS/skin-blue.min.css">
+    <style>
+  .container{padding:0;}
+  </style>
+</head>
+
+<script>
+  $( function() {
+    $( ".navic" ).click( function() {
+      $(".user-panel h2").toggleClass( "usernamehid" );
+            $(".user-panel p").toggleClass( "userrolehid" );
+    });
+  });
+
+   $( function() {
+    $( ".navic" ).click( function() {
+      $(".sidebar-menu img").toggleClass( "leftali" );
+    });
+  });
+</script>
+
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <!-- Main Header -->
+  <header class="main-header">
+
+
+
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- Sidebar toggle button-->
+      <a href="#"  data-toggle="push-menu" role="button">
+       <img src="images/navicon.png" class="img-fluid navic">
+      </a>
+      <!-- Navbar Right Menu -->
+       <img src="images/adminlogo.png" class="img-fluid adminslog">
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel">
+        <div class="image text-center">
+          <img src="images/useradmin.png" class="img-circle img-fluid mx-auto d-block" alt="User Image">
+          <h2>Sarah Fernadez</h2>
+          <p>Admin</p>
+        </div>
+     
+      </div>
+
+
+      <!-- Sidebar Menu -->
+      <ul class="sidebar-menu" data-widget="tree">
+
+        <li class="active"><a href="manage_site.html"><img src="images/manage.png" class="img-fluid"/><span>Manage Sites</span></a></li>
+         <li class="treeview">
+          <a href="#"><img src="images/report.png" class="img-fluid"/><span>Reports</span>
+            
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="map.html"><img src="images/report.png" class="img-fluid" style="visibility: hidden;"/> Map</a></li>
+            <li><a href="download_data.html"><img src="images/report.png" class="img-fluid" style="visibility: hidden;"/>Download Data</a></li>
+          </ul>
+        </li>
+
+                <li><a href="login.html"><img src="images/logout.png" class="img-fluid"/><span>Logout</span></a></li>
+       
+      </ul>
+      <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper adminprof">
+<div class="content_holesecion">
+		<div class="viewwater-qality">
+			<div class="container">
+			<h3>ADD DETAILS</h3>
+			<div class="d-flex flex-column water-cards">
+			<h4>BASIC INFO</h4>
+			<div class="half_main d-flex flex-row flex-wrap"><div class="myview-quality-half">
+			<label>Event I’D</label>
+			<input type="text" value="01" class="form-control" id="eventid">
+			</div>
+				<div class="myview-quality-half">
+			<label>Monitor Name</label>
+			<select class="add_drop">
+			  <option>Zeppelin Bram	</option>
+			  <option>Zeppelin</option>
+			  <option>Bram</option>
+			</select>
+			</div>
+				<div class="myview-quality-half">
+			<label>Site Description</label>
+			<input type="text" value="It is a long established fact that a reader" class="form-control" id="site">
+			</div>
+				<div class="myview-quality-half mydate-qua">
+			<label>Date</label>
+			<input id="datepicker7"  value="01/25/2018"  />
+			<i class="fa fa-calendar" aria-hidden="true"></i>
+			</div>
+				<div class="myview-quality-half">
+			<label>Time</label>
+			<input type="text" value="13:45" class="form-control" id="time_edit">
+			</div>
+				<div class="myview-quality-half">
+			<label>Depth</label>
+			<input type="text" value="0.7" class="form-control" id="depth">
+			</div>
+				<div class="myview-quality-half">
+			<label>Site Latitude</label>
+			<input type="text" value="29.5459524" class="form-control" id="latitude">
+			</div>
+				<div class="myview-quality-half">
+			<label>Site Longitude</label>
+			<input type="text" value="- 95.043871" class="form-control" id="longnitude">
+			</div>
+			</div></div>
+			
+			<div class="d-flex flex-column water-cards">
+			<h4>Core tests and measurements</h4>
+			<div class="half_main"><div class="myview-quality-qaul">
+			<label>Air Temp (C)</label>
+			<input type="text" value="29" class="form-control" id="airtemp">
+			</div>
+				<div class="myview-quality-qaul">
+			<label>Water Temp (C)</label>
+			<input type="text" value="28.5" class="form-control" id="watertemp">
+			</div>
+				<div class="myview-quality-qaul">
+			<label>Average DO</label>
+			<input type="text" value="6.4" class="form-control" id="average">
+			</div>
+				<div class="myview-quality-qaul">
+			<label>Sample pH</label>
+			<input type="text" value="9" class="form-control" id="sampleph">
+			</div>
+				<div class="myview-quality-qaul">
+			<label>Water Transparency (meters)</label>
+			<input type="text" value="0.44" class="form-control" id="transparen">
+			</div>
+				<div class="myview-quality-qaul">
+			<label>Total Depth</label>
+			<input type="text" value="1.65" class="form-control" id="tdpeth">
+			</div>
+
+			</div></div>
+			
+			<div class="d-flex flex-column water-cards">
+			<h4>Field observations</h4>
+			<div class="half_main"><div class="myview-quality-qaul">
+			<label>Day Since Last Precipitation</label>
+			<input type="text" value="2" class="form-control" id="watertemp">
+			</div>
+				<div class="myview-quality-qaul">
+			<label>Inches of Rainfall Accumalation</label>
+			<input type="text" value="0.04" class="form-control" id="watertemp">
+			</div>
+				<div class="myview-quality-qaul">
+			<label>Salinity (ppt)</label>
+			<input type="text" value="9.6" class="form-control" id="watertemp">
+			</div>
+				<div class="myview-quality-qaul last_width">
+			<label>Tide Stage</label>
+			<input type="text" value="Zeppelin Bram" class="form-control" id="watertemp">
+			</div>
+			 
+				
+				<div class="myview-quality-qaul last_width">
+			<label>Comments</label>
+			<textarea class="form-control" rows="9" id="comment_qual">It is a long established fact that a reader...</textarea>
+			</div>
+			</div>
+			<div class="d-flex mybtn-para flex-row justify-content-center">
+			<a class="btn-green">SUBMIT</a>
+			<a class="btn-orange">UPDATE</a>
+			<a class="btn-greys">CANCEL</a>
+			</div>
+			</div>
+			
+			</div>
+		</div>
+	</div>
+
+
+
+ 
+
+  </div>
+  </div>
+  <!-- /.content-wrapper -->
+
+
+
+<!-- REQUIRED JS SCRIPTS -->
+
+<!-- Bootstrap 3.3.7 -->
+
+<!-- AdminLTE App -->
+<script src="js/adminlte.min.js"></script>
+<script>
+        $('#datepicker7').datepicker({
+            uiLibrary: 'bootstrap4'
+        });
+    </script>
+
+</body>
+</html>

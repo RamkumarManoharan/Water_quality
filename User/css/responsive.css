@@ -1,0 +1,52 @@
+/*Mobile--Version*/
+@media screen and (min-width: 320px) and (max-width: 767px) {
+.downloadtable-fliter{flex-direction:column !important;}
+.myrow-date{flex-direction:column !important;margin-bottom:10px;}
+.myrow-select{width:100%;}
+.myrow-date .myrow-from label{width:100%;display:flex;}
+.myrow-date .myrow-from{display:inline-block;margin-bottom:10px;}
+.myrow-date .myrow-from i{top:inherit;bottom:13px;}
+.myview-quality-half, .myview-quality-qaul, .myview-quality-full{width:100%;}
+.myview-quality-half label, .myview-quality-qaul label, .myview-quality-full label{width:50%;}
+.myview-quality-half p, .myview-quality-qaul p, .myview-quality-full p{width:50%;}
+.chart-tab .tab-contents{flex-direction:column;align-items:center;}
+.date_pages.selections{margin-left:0;}
+div#datePicker_section{margin:0;padding:20px 0px;}
+li.four-star img {
+    margin-left: 20px;
+}
+/*END*/	
+} 
+@media only screen and (min-width: 320px) and (max-width: 575px) {
+.yeru-map-markers {text-align: left;padding: 24px 0 0;}
+.yeru-map-markers div { height: 55px;}
+#datePicker_section button.btn.btn-primary {margin-top: 20px;margin: 20px auto 0px auto;}	
+
+/*END*/	
+} 
+@media screen and (min-width: 320px) and (max-width: 467px) {
+.header_content{flex-direction:column;align-items:center;}
+.header_content ul.header_lists{margin-top:16px;}
+.map-markers{flex-direction:column;align-items:center;}
+.map-markers .grn-box{margin-right:13px;margin-bottom:24px;}
+
+/*END*/	
+} 
+@media only screen and (min-width:320px) and (max-width:991px){
+.site_data{flex-direction:column !important;}
+ul.site_data_cont.rgt_sitedata{margin-top:15px;}
+div#menu2{padding:0px;}
+
+  }
+/*Tab--Version*/
+@media screen and (min-width: 768px) and (max-width: 991px) {
+.myrow-date .myrow-from i {
+    right: 23px;
+}
+.myrow-date input {
+    width: 135px !important;
+    margin-right: 8px;
+}	
+	
+/*END*/	
+} 
